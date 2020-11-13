@@ -1,0 +1,20 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" routerLink="/home">Home</a>
+        <a *ngIf="isAdmin || isMoniteur" class="nav-link" routerLink="/cours">Cours</a>
+        <a *ngIf="isAdmin || isMoniteur" class="nav-link" routerLink="/cheveaux">Cheveaux</a>
+        <a *ngIf="isUser" class="nav-link" routerLink="/cours">Mes cours</a>
+        <a *ngIf="isAdmin" class="nav-link" routerLink="/user">Users</a>
+        <a *ngIf="!isLoggedIn" class="nav-link" routerLink="/sign_up">S'inscrire</a>
+        <a *ngIf="!isLoggedIn" class="nav-link" routerLink="/login">Se connecter</a>
+        <a *ngIf="isLoggedIn" class="nav-link">logout</a>
+        <a *ngIf="isLoggedIn" class="nav-item">{{titre}}</a>
+      </div>
+    </div>
+  </nav>
